@@ -1,6 +1,9 @@
 import jenkins.model.Jenkins;
 import hudson.model.FreeStyleProject;
 import hudson.tasks.Shell;
+Jenkins jenkinsConfiguration = new Jenkins();
+
+jenkinsConfiguration.disableJobDSLScriptSecurity()
 
 job = Jenkins.instance.createProject(FreeStyleProject, 'freestylejob007')
 
