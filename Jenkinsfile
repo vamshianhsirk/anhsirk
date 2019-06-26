@@ -10,9 +10,9 @@ job.save()
 
 build = job.scheduleBuild2(5, new hudson.model.Cause.UserIdCause())
 
-build.get() # Block until the build finishes
+build.get()
 
 generatedJobs = build.getAction(javaposse.jobdsl.plugin.actions.GeneratedJobsBuildAction).getItems()
 
-# FIXME skip .scheduleBuild2() on Folder jobs
+
 generatedJobs.each { j -> j.scheduleBuild2(5, new hudson.model.Cause.UserIdCause()) } 
